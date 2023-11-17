@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         linkToMain()
     }
     document.getElementById("submit").addEventListener("click", () => {
-        localStorage.setItem("token", json.token)
-        linkToMain(document.getElementById("id").value)
+        localStorage.setItem("token", document.getElementById("id").value)
+        linkToMain()
     })
 })
 

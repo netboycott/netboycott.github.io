@@ -14,10 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     brands = document.getElementById("brands")
 
     fetch("http://194.163.146.18:8081/brand/all", {
-        method: "get", headers: new Headers({
+        method: "get", headers: {
             'Authorization': 'Bearer ' + localStorage.getItem("token"),
-        })
-    }).then(res => res.json()).then(json => console.log(json))
+            "accept": "*/*",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(res => res.json()).then(json => console.log(json))
     // .catch(() => {
     //     localStorage.removeItem("token")
     //     linkToLogin()

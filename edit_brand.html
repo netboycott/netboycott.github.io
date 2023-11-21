@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Brand</title>
+    <link rel="stylesheet" href="edit_brand.css" />
+  </head>
+  <body>
+    <div class="edit-container">
+      <h2>Edit Brand</h2>
+
+      <!-- Form for editing brand details -->
+      <form id="editBrandForm">
+        <!-- Brand Name -->
+        <label for="brandName">Brand Name:</label>
+        <input type="text" id="brandName" name="brandName" value="{name}" />
+        <br />
+
+        <!-- Brand Status -->
+        <label for="brandStatus">Status:</label>
+        <select id="brandStatus" name="brandStatus">
+          <option {select0} value="smooth">SMOOTH</option>
+          <option {select1} value="controversial">CONTROVERSIAL</option>
+          <option {select2} value="forbidden">FORBIDDEN</option>
+        </select>
+        <br />
+
+        <!-- Desired Participation Count -->
+        <label for="participationCount">Desired Participation Count:</label>
+        <input
+          type="number"
+          id="participationCount"
+          name="participationCount"
+          value="{count}"
+        />
+        <br />
+
+        <!-- Explanation -->
+        <label for="explanation">Explanation: </label>
+        <textarea id="explanation" name="explanation" rows="10" cols="45">
+{explanation}</textarea
+        >
+        <br />
+
+        <!-- Logo Upload -->
+        <label for="logo">Logo:</label>
+        <input type="file" id="logo" name="logo" accept="image/*" />
+        <br /><br />
+
+        <!-- Save and Cancel Buttons -->
+        <button type="submit" onclick="uploadImage()">Save Changes</button>
+      </form>
+      <button id="deleteBrandButton">Delete Brand</button>
+    </div>
+
+    <script src="./edit_brand.js"></script>
+  </body>
+</html>

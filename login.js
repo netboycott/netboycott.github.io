@@ -1,20 +1,17 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    function linkToMain() {
+    function goTo(url) {
         link = document.createElement("a")
-        link.href = "./index.html"
+        link.href = url
         document.getElementsByTagName("body")[0].appendChild(link)
         link.click()
     }
-
     if (localStorage.getItem("token") !== null) {
-        linkToMain()
+        goTo("./index.html")
     }
     document.getElementById("submit").addEventListener("click", () => {
-        localStorage.setItem("token", document.getElementById("id").value)
-        linkToMain()
+        localStorage.setItem("token", JSON.stringify(document.getElementById("id").value))
+        goTo("./index.html")
     })
 })
 

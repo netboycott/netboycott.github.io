@@ -1,28 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    function linkToLogin() {
+    function goTo(url) {
         link = document.createElement("a")
-        link.href = "./login.html"
+        link.href = url
         document.getElementsByTagName("body")[0].appendChild(link)
         link.click()
     }
 
-    if (localStorage.getItem("token") === null) {
-        linkToLogin()
-    }
-
-    brands = document.getElementById("brands")
-
-    fetch("http://194.163.146.18:8081/brand/all", {
-        method: "get", headers: {
-            'Authorization': 'Bearer ' + localStorage.getItem("token"),
-            "accept": "*/*",
-            "Content-Type": "application/json"
-        }
+    document.getElementById("brands-button").addEventListener("click", () => {
+        goTo("./brands.html")
     })
-        .then(res => res.json()).then(json => console.log(json))
-    // .catch(() => {
-    //     localStorage.removeItem("token")
-    //     linkToLogin()
-    // })
+
+    document.getElementById("news-button").addEventListener("click", () => {
+        goTo("./news.html")
+    })
+
 })
